@@ -1,3 +1,5 @@
 export enum RouterMap {
-    Home = "/",
+    Login = "/",
+    Home = "/Home",
+    CarKind = "/CarKind"
 }

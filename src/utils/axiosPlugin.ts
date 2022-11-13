@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 import { CONFIG } from '../constants/config'
 import { getAuthorizationHeader } from './getAuthorizationHeader'
+import { account } from "../store"
 
 const { apiURL } = CONFIG
 
@@ -14,6 +15,8 @@ instance.interceptors.request.use(
     function (config: any) {
         // Do something before request is sent
         // e.g. show loading
+        let token = account().getJwt
+        config.headers.Authorization = `Bearer ${token}`;
         return config
     },
     function (error: any) {
