@@ -1,12 +1,18 @@
 import req from '../utils/axiosPlugin'
 
-/** 範例 api */
-// Get
-export const apiGet = (data: any) => {
-    return req.get(`/path`, data, undefined)
+/** 測試api */
+export const apiTest = (data: any) => {
+    return req.get(`/WeatherForecast`, data, undefined)
 }
 
-// Post
-export const apiPost = (data: any) => {
-    return req.post(`/path`, data, undefined)
+/** 權限相關*/
+// 登入
+export const apiLogin = (data: any) => {
+    return req.post(`/Account`, { ...data }, undefined)
 }
+
+// 取得角色資訊
+export const apiClaims = () => {
+    return req.get(`/claims`, null, undefined)
+}
+
