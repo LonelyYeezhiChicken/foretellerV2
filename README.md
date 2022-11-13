@@ -8,3 +8,4 @@
 - axios 1.1.3
 - jssha 3.3.0
 - pinia 2.0.23
+- element-plus 2.2.21
